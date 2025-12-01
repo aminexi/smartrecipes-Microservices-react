@@ -38,42 +38,6 @@
 
 L'application suit une architecture microservices composée de 6 services distincts :
 
-### Diagramme d'Architecture
-
-\`\`\`
-┌─────────────────┐
-│   Frontend      │
-│   Next.js       │
-│   Port: 3000    │
-└────────┬────────┘
-│
-▼
-┌─────────────────────────────────────┐
-│   Gateway Service                   │
-│   Spring Cloud Gateway              │
-│   Port: 9999                        │
-│   - Routage des requêtes           │
-│   - Load balancing                  │
-└────────┬────────────────────────────┘
-│
-▼
-┌─────────────────────────────────────┐
-│   Discovery Service (Eureka)        │
-│   Port: 8761                        │
-│   - Service Registry               │
-│   - Service Discovery              │
-└─────────────────────────────────────┘
-│
-┌────┴────┬────────┬──────────┐
-▼         ▼        ▼          ▼
-┌────────┐ ┌─────┐ ┌────────┐ ┌────────┐
-│ User   │ │Recipe│ │Rating  │ │Config  │
-│Service │ │Service│ │Service │ │Service │
-│:9091   │ │:9092 │ │:9093   │ │:8888   │
-└────────┘ └─────┘ └────────┘ └────────┘
-\`\`\`
-
----
 
 ## Services Infrastructure
 
@@ -461,30 +425,6 @@ private LocalDateTime createdAt;
 
 L'application frontend est construite avec **Next.js 16** utilisant le **App Router** et **React 19.2**.
 
-**Structure du Projet:**
-\`\`\`
-smartrecipes2/
-├── app/
-│   ├── page.tsx           # Page principale (Dashboard)
-│   ├── layout.tsx         # Layout global
-│   └── globals.css        # Styles globaux
-├── components/
-│   ├── auth/
-│   │   ├── login-form.tsx
-│   │   └── register-form.tsx
-│   ├── recipes/
-│   │   ├── recipe-list.tsx
-│   │   ├── recipe-form.tsx
-│   │   ├── recipe-detail.tsx
-│   │   ├── rating-form.tsx
-│   │   └── rating-list.tsx
-│   └── user/
-│       └── user-profile.tsx
-└── lib/
-└── seed-data.ts
-\`\`\`
-
----
 
 ### Pages et Composants
 
@@ -1213,14 +1153,3 @@ GET http://localhost:9093/actuator/health  # Rating Service
 🔲 Modération des commentaires  
 🔲 Notifications en temps réel  
 🔲 Tests automatisés (Jest, JUnit)
-
----
-
-## Contact et Support
-
-Pour toute question ou problème :
-1. Vérifier les logs de la console
-2. Vérifier le dashboard Eureka
-3. Tester les endpoints avec Postman
-4. Consulter les bases de données H2
-
