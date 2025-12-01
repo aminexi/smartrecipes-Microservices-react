@@ -1,0 +1,63 @@
+spring:
+  application:
+    name: gateway-service
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}
+
+  cloud:
+    gateway:
+
+      default-filters:
+        - StripPrefix=0
+      routes:
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/users/**
+            - Method=GET,POST,PUT,DELETE
+
+        - id: recipe-service
+          uri: lb://RECIPE-SERVICE
+          predicates:
+            - Path=/recipes/**
+
+        - id: rating-service
+          uri: lb://RATING-SERVICE
+          predicates:
+            - Path=/ratings/**
+
+
+
+    discovery:
+      locator:
+        enabled: true
+        lower-case-service-id: false
+        # The predicate generated is Path=/{serviceId}/** (case-sensitive by default)
+
+server:
+  port: 9999
+
+# Expose actuator endpoints
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env,metrics
+  endpoint:
+    health:
+      show-details: always
+
+# Eureka client configuration (points to discovery server)
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    fetch-registry: true
+    register-with-eureka: true
+
+# Optional: rate limit, timeouts,  can be configured here
+
+# Static routes (optional) — but we will enable discovery-based routing as well
+
+# Discovery locator properties: automatically map serviceId -> /SERVICE-ID/**
+# You can customize using discovery.locator.lower-case-service-id or route-id-prefix

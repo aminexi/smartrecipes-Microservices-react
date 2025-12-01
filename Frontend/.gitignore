@@ -1,0 +1,7 @@
+# Project exclude paths
+/config-service/target/
+/discovery-service/target/
+/gateway-service/target/
+/rating-service/target/
+/recipe-service/target/
+/user-service/target/
