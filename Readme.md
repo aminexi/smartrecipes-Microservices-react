@@ -3,16 +3,6 @@
 A modern, scalable recipe management application built with **Spring Boot microservices architecture** and a React frontend. This project demonstrates enterprise-level microservices patterns including service discovery, API gateway, and distributed data management.
 
 
-## 📋 Table of Contents
-
-- [Architecture Overview](#architecture-overview)
-- [Microservices](#microservices)
-- [Technologies](#technologies)
-- [Getting Started](#getting-started)
-- [API Documentation](#api-documentation)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-
 ## 🏗️ Architecture Overview
 
 SmartRecipes implements a microservices architecture with the following components:
@@ -227,7 +217,7 @@ http://localhost:8761
 <img width="1919" height="778" alt="image" src="https://github.com/user-attachments/assets/c5313fed-afdb-4cdd-bf18-a5798f1e33b4" />
 <img width="1902" height="821" alt="image" src="https://github.com/user-attachments/assets/6e1d22b6-7f66-445b-b590-5a497060efe4" />
 
-)
+
 
 ### Dashboard
 <img width="1891" height="846" alt="image" src="https://github.com/user-attachments/assets/121b8676-ea45-4eaa-8f94-99d164e0d631" />
@@ -241,7 +231,7 @@ http://localhost:8761
 
 
 ### Create Recipe
-<img width="1919" height="743" alt="image" src="https://github.com/user-attachments/assets/032d0cb7-d34c-4aae-9611-fbcf7a3c5dc0" />)
+<img width="1919" height="743" alt="image" src="https://github.com/user-attachments/assets/032d0cb7-d34c-4aae-9611-fbcf7a3c5dc0" />
 
 ### User Profile
 <img width="1919" height="817" alt="image" src="https://github.com/user-attachments/assets/a509fc48-cd12-400b-ad54-090aea4678ea" />
